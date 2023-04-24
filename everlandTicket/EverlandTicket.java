@@ -3,6 +3,7 @@ package everlandTicket;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 	
 public class EverlandTicket{
 	int ticketType, ageGroup, age,
@@ -36,6 +37,8 @@ public class EverlandTicket{
 	}	
 	
 	void input() {
+		Locale currentLocale = Locale.getDefault();
+		LanguageClass.languageSelect(currentLocale.getCountry());
 		ticketType = input.inputTicketType();
 		birthDayNumbers = calculate.getValidBirthDate();
 		ticketAmount = input.inputAmount();
