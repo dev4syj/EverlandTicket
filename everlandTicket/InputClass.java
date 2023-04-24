@@ -1,6 +1,5 @@
 package everlandTicket;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class InputClass {	
@@ -41,8 +40,6 @@ public class InputClass {
 	}
 	public int inputContinue() {
 		int repeat;
-		print.printContiue();
-		repeat = scan.nextInt();
 		do {
 			print.printContiue();
 			repeat = scan.nextInt();
