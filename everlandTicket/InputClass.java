@@ -43,6 +43,11 @@ public class InputClass {
 		int repeat;
 		print.printContiue();
 		repeat = scan.nextInt();
+		do {
+			print.printContiue();
+			repeat = scan.nextInt();
+		} while(!(repeat == 0 || repeat == 1));
+		
 		return repeat;
 	}
 
