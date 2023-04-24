@@ -3,10 +3,10 @@ package everlandTicket;
 import java.util.Scanner;
 
 public class InputClass {	
-	
+
 	private Scanner scan = null;
 	private PrintClass print = null;
-	
+
 	public InputClass() {
 		scan = new Scanner(System.in);
 		print = new PrintClass();
