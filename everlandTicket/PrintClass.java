@@ -7,90 +7,74 @@ import java.util.Calendar;
 public class PrintClass {
 
  	public void printContiue() {
-		System.out.println("\nDo you want to order more?");
-		System.out.println("0.YES");
-		System.out.println("1.NO");
-		System.out.print(" => ");
+		System.out.println(LanguageClass.CONTINUE_QUESTION);
 	}	
 	public void printTicketType() {
-		System.out.println("\nChoose your ticket type!");
-		System.out.println("1.Type A");
-		System.out.println("2.Type B");
-		System.out.println("3.Type C");
-		System.out.println("4.Type D");
-		System.out.print(" => ");
+		System.out.println(LanguageClass.TICKET_TYPE_QUESTION);
 	}
 	public void printBirthDate() {
-		System.out.print("\nPlease enter your birth date in the format yyyy-mm-dd: ");
+		System.out.print(LanguageClass.BIRTH_DATE_QUESTION);
 	}	
 	
 	public void printError() {
-		System.out.println("Invalid input.");
+		System.out.println(LanguageClass.ERROR_MESSAGE);
 	}
 	
 	public void printCount() {
-		System.out.println("\n* Max amount is 10 *");
-		System.out.println("How many tickets do you want?");
-		System.out.print(" => ");
+		System.out.println(LanguageClass.AMOUNT_QUESTION);
 	}
 	public void printDiscountType() {
-		System.out.println("\nChoose your discount type!");
-		System.out.println("1.None");
-		System.out.println("2.The disabled");
-		System.out.println("3.National Merit");
-		System.out.println("4.Multi-child");
-		System.out.println("5.Pregnant");
-		System.out.print(" => ");
+		System.out.println(LanguageClass.DISCOUNT_TYPE_QUESTION);
 	}	
 	public void pirntTicketHeader() {
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
 		
-		System.out.println("\nThank you for your order!\n");
-		System.out.println("================Everland=================");
-		System.out.printf("%15s%s", " ", "Valid only on purchase day");
-		System.out.printf("\n%16s%s %10s\n\n", " ", "Purchase date:", dateFormat.format(calendar.getTime()));
+		System.out.println(LanguageClass.THANK_YOU_MESSAGE);
+		System.out.println(LanguageClass.HEADER_LINE);
+		System.out.printf("%s",LanguageClass.PURCHASE_NOTICE);
+		System.out.printf("\n%s %10s\n\n", LanguageClass.PURCHASE_DATE, dateFormat.format(calendar.getTime()));
 	}	
 	public void printTicketType(int ticketType) {
 		if (ticketType == 1) {
-			System.out.printf("%7s   ", "TicketA");
+			System.out.printf("%-5s ", LanguageClass.TICKET_TYPE_A);
 		} else if (ticketType == 2){
-			System.out.printf("%7s   ", "TicketB");
+			System.out.printf("%-5s ", LanguageClass.TICKET_TYPE_B);
 		} else if (ticketType == 3){
-			System.out.printf("%7s   ", "TicketC");
+			System.out.printf("%-5s ", LanguageClass.TICKET_TYPE_C);
 		} else if (ticketType == 4){
-			System.out.printf("%7s   ", "TicketD");
+			System.out.printf("%-5s ", LanguageClass.TICKET_TYPE_D);
 		}
 	}
 	public void printAgeGroup(int ageGroup) {
 		if(ageGroup == 1) {
-			System.out.printf("%11s ", "Baby");
+			System.out.printf("%10s ", LanguageClass.AGE_GROUP_BABY);
 		}  else if(ageGroup == 2) {
-			System.out.printf("%11s ", "Soin/Old");
+			System.out.printf("%10s ", LanguageClass.AGE_GROUP_DAEIN);
 		} else if(ageGroup == 3) {
-			System.out.printf("%11s ", "Daein/Youth");
+			System.out.printf("%10s ", LanguageClass.AGE_GROUP_SOIN);
 		}
 	}
 	public void printTicketPrice(int ticketCount, int totalPrice) {
 		DecimalFormat numberFormat = new DecimalFormat("###,###,###,###,###");	
-		System.out.printf("%2s %2d %9s %3s\n", "*",ticketCount, numberFormat.format(totalPrice), "won");
+		System.out.printf("%2s %2d %11s %3s\n", "*",ticketCount, numberFormat.format(totalPrice), LanguageClass.CURRENCY_UNIT);
 	}
 	public void printDiscountApplied(int discountType) {
 		if (discountType == 1) {
-			System.out.println();
+			System.out.println(LanguageClass.DISCOUNT_TYPE_DISABLED_APPLIED);
 		} else if (discountType == 2) {
-			System.out.println("*Discount applied(type:The disabled)\n");
+			System.out.println();
 		} else if (discountType == 3) {
-			System.out.println("*Discount applied(type:National Merit)\n");
+			System.out.println(LanguageClass.DISCOUNT_TYPE_NATIONAL_MERIT_APPLIED);
 		} else if (discountType == 4) {
-			System.out.println("*Discount applied(type:Multi-child)\n");
+			System.out.println(LanguageClass.DISCOUNT_TYPE_MULTI_CHILD_APPLIED);
 		} else if (discountType == 5) {
-			System.out.println("*Discount applied(type:Pregnant)\n");
+			System.out.println(LanguageClass.DISCOUNT_TYPE_PREGNANT_APPLIED);
 		}	
 	}
 	public void printSumofAllPrices(int sumAllPrices) {
 		DecimalFormat numberFormat = new DecimalFormat("###,###,###,###,###");	
-		System.out.printf("%11s %15s %9s %3s\n", "Total price", " ", numberFormat.format(sumAllPrices), "won");	
+		System.out.printf("%-11s %23s %3s\n", LanguageClass.TOTAL_PRICE, numberFormat.format(sumAllPrices), LanguageClass.CURRENCY_UNIT);	
 	}
 	public void printEnd() {
 		System.out.println("=========================================");
