@@ -11,15 +11,16 @@ public class CalculateClass {
 	    LocalDate now = LocalDate.now();
 	    boolean isValidInput = false;
 	    LocalDate birthDate = null;
+	    PrintClass print = new PrintClass();
 
 	    while (!isValidInput) {
 	        Scanner scanner = new Scanner(System.in);
-	        System.out.print("\nPlease enter your birth date in the format yyyy-mm-dd: ");
+	        print.printBirthDate();
 	        String birthDayNumbers = scanner.nextLine();
 	        String[] birthDayNumbersSplit = birthDayNumbers.split("-");
 	        
 	        if (!birthDayNumbers.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
-	            System.out.println("Invalid input. Birth date should be in the format yyyy-mm-dd");
+	            print.printError();
 	            continue;
 	        }
 	        try {	        
@@ -30,11 +31,11 @@ public class CalculateClass {
 	            birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
 
 	            if (birthDate.isAfter(now)) {
-	                throw new IllegalArgumentException("Birthdate is in the future");
+	            	print.printError();
 	            }
 	            isValidInput = true;
 	        } catch (DateTimeException | IllegalArgumentException e) {
-	            System.out.println("Invalid input. " + e.getMessage());
+	            print.printError();
 	        }
 	    }
 
