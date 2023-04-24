@@ -20,11 +20,14 @@ public class PrintClass {
 		System.out.println("4.Type D");
 		System.out.print(" => ");
 	}
-	public void printBirthYear() {
-		System.out.println("\n* Input number in 4 digits *");
-		System.out.println("Input your birth year!");
-		System.out.print(" => ");
+	public void printBirthDate() {
+		System.out.print("\nPlease enter your birth date in the format yyyy-mm-dd: ");
 	}	
+	
+	public void printError() {
+		System.out.println("Invalid input.");
+	}
+	
 	public void printCount() {
 		System.out.println("\n* Max amount is 10 *");
 		System.out.println("How many tickets do you want?");
@@ -70,7 +73,7 @@ public class PrintClass {
 	}
 	public void printTicketPrice(int ticketCount, int totalPrice) {
 		DecimalFormat numberFormat = new DecimalFormat("###,###,###,###,###");	
-		System.out.printf("%2s %2d %9s %3s\n", "×",ticketCount, numberFormat.format(totalPrice), "won");
+		System.out.printf("%2s %2d %9s %3s\n", "*",ticketCount, numberFormat.format(totalPrice), "won");
 	}
 	public void printDiscountApplied(int discountType) {
 		if (discountType == 1) {
