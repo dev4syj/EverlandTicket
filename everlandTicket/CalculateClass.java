@@ -32,8 +32,9 @@ public class CalculateClass {
 
 	            if (birthDate.isAfter(now)) {
 	            	print.printError();
-	            }
-	            isValidInput = true;
+	            } else {
+	            	isValidInput = true;
+	            }	            
 	        } catch (DateTimeException | IllegalArgumentException e) {
 	            print.printError();
 	        }
